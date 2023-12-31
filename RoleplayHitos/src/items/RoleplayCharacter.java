@@ -53,7 +53,8 @@ public class RoleplayCharacter extends VBox {
 	
 	
 	public int getCheckedCaracteristica(){
-		ListView<String> view = (ListView<String>) caracteristicasTitledPane.getContent();
+		ListView<String> content = (ListView<String>) caracteristicasTitledPane.getContent();
+		ListView<String> view = content;
 		MultipleSelectionModel<String> selectionModel = view.getSelectionModel();
 		ObservableList<String> selectedItems = selectionModel.getSelectedItems();
 		String s = selectedItems.toString();

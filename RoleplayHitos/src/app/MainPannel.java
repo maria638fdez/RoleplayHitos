@@ -95,13 +95,7 @@ public class MainPannel extends Application {
         gc.stroke();
         
         // Write number
-        writeNumber(gc, width, height);
-
-		return canvas;
-    }
-
-	private void writeNumber(GraphicsContext gc, double width, double height) {
-		gc.setFill(Color.BLACK);
+        gc.setFill(Color.BLACK);
         Font font = Font.font("Arial", FontWeight.BOLD, 20);
         gc.setFont(font);
 
@@ -110,7 +104,9 @@ public class MainPannel extends Application {
         double textWidth = gc.getFont().getSize();
         double textHeight = gc.getFont().getSize();
         gc.fillText(number, (width - textWidth)/2, (height + textHeight)/2);
-	}
+
+		return canvas;
+    }
 
 
 	private TextArea setConsole() {

@@ -17,6 +17,7 @@ public class SheetRetriever {
     	SetCaracteristicas(0, 0, 0, 0);
 	    SetHabilidades(0, 0, 0, 0, 0, 0, 0);
 	    this.drama = drama;
+
 	}
 	
     public enum Caracteristica {

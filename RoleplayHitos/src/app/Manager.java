@@ -41,10 +41,10 @@ public class Manager {
 
 	private void setCampaignLevel(levelName level) {
 		switch (level) {
-			case Titanes:		{	setCampaignValues(30,12,50,2);	break;}
-			case Heroes: 		{	setCampaignValues(24,10,40,3);	break;}
-			case Protagonistas:	{	setCampaignValues(18,9,40,4);	break;}
-			case Gente: 		{	setCampaignValues(16,7,35,5);	break;}
+			case Titanes:		{	setCampaignValues(30,12,50,2); 		break;}
+			case Heroes: 		{	setCampaignValues(24,10,40,3); 		break;}
+			case Protagonistas:	{	setCampaignValues(18,9,40,4); 		break;}
+			case Gente: 		{	setCampaignValues(16,7,35,5); 		break;}
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + level);
 		}

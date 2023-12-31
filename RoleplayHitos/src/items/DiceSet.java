@@ -43,7 +43,5 @@ public class DiceSet {
     private void Diceset() {
     	SetDiceValues(0, 0, 0);
 	}
-    
-    
 
 }

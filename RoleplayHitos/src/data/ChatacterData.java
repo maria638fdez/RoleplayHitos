@@ -12,17 +12,17 @@ public class ChatacterData {
 
 	public  ChatacterData(Manager manager) {
 		
-	    RoleplayCharacter character1 = new RoleplayCharacter("Warrior", manager.getDrama());
+	    RoleplayCharacter character1 = new RoleplayCharacter("Warrior");
 	    character1.sheet.SetCaracteristicas(4, 4, 4, 4);
 	    character1.sheet.SetHabilidades(5, 5, 5, 5, 5, 5, 5);
 	    all.add(character1);
 	    
-	    RoleplayCharacter character2 = new RoleplayCharacter("Archer", manager.getDrama());
+	    RoleplayCharacter character2 = new RoleplayCharacter("Archer");
 	    character2.sheet.SetCaracteristicas(4, 4, 4, 4);
 	    character2.sheet.SetHabilidades(5, 5, 5, 5, 5, 5, 5);
 	    all.add(character2);
 	    
-	    RoleplayCharacter character3 = new RoleplayCharacter("Mage", manager.getDrama());
+	    RoleplayCharacter character3 = new RoleplayCharacter("Mage");
 	    character3.sheet.SetCaracteristicas(4, 4, 4, 4);
 	    character3.sheet.SetHabilidades(5, 5, 5, 5, 5, 5, 5);
 	    all.add(character3);
