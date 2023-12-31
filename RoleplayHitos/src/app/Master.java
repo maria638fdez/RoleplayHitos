@@ -5,7 +5,7 @@ import items.DiceSet;
 import items.RoleplayCharacter;
 import items.SheetRetriever.Caracteristica;
 
-public class Manager {
+public class Master {
 	
 	public enum levelName {
 	   	Titanes,
@@ -13,7 +13,6 @@ public class Manager {
 	   	Protagonistas,
 	   	Gente;
 	}
-	
 
     public enum levelRules{
     	maximo,
@@ -22,15 +21,18 @@ public class Manager {
     	drama;
     }
     
-    
-    DiceSet diceset = new DiceSet();
-    public EnumMap<levelRules, Integer> campaignValues = new EnumMap<levelRules, Integer>(levelRules.class);
+    DiceSet diceset;
+    public EnumMap<levelRules, Integer> campaignValues;
 
-    public Manager() {
+    public Master() {
     	this("Titanes");
     }
     
-    public Manager(String stringLevel) {
+    public Master(String stringLevel) {
+    	
+    	diceset = new DiceSet();
+    	campaignValues = new EnumMap<levelRules, Integer>(levelRules.class);
+    	
     	levelName level = levelName.valueOf(stringLevel);
     	try {
 	    	setCampaignLevel(level);
@@ -59,10 +61,10 @@ public class Manager {
 	}
 	
 
-	public int rollSingleFeature(int feature) {
+	public int roll_C() {
 		diceset.roll();
 		int dice = diceset.C();
-		return feature + dice;
+		return dice;
 	}
 	
 	public int getAverageValue() {

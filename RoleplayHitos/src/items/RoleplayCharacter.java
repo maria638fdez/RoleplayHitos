@@ -2,9 +2,14 @@ package items;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+import items.SheetRetriever.Caracteristica;
+import items.SheetRetriever.Habilidad;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MultipleSelectionModel;
@@ -21,6 +26,14 @@ public class RoleplayCharacter extends VBox {
     protected TitledPane caracteristicasTitledPane;
     protected TitledPane habilidadesTitledPane;
     
+    public TitledPane getCaracteristicasPane(){
+    	return caracteristicasTitledPane;
+    }
+    
+    public TitledPane getHabilidadesPane(){
+    	return habilidadesTitledPane;
+    }
+    
 	public RoleplayCharacter(String name, int drama) {
 		
 		// Sheet (empty)
@@ -29,7 +42,7 @@ public class RoleplayCharacter extends VBox {
 		
 		// Panes
 		caracteristicasTitledPane = createSecondaryPane("Caracteristicas", sheet.getAllCaracteristicas());
-		TitledPane habilidadesTitledPane = createSecondaryPane("Habilidades", sheet.getAllHabilidades());
+		habilidadesTitledPane = createSecondaryPane("Habilidades", sheet.getAllHabilidades());
 		
 		//Agrupación de paneles
 		VBox AttributesPane = new VBox(caracteristicasTitledPane, new Separator(), habilidadesTitledPane);
@@ -38,7 +51,7 @@ public class RoleplayCharacter extends VBox {
 
 	private TitledPane createSecondaryPane(String label, ArrayList<String> allAttributes) {
 		TitledPane titledPane = new TitledPane(label, new Label(label));
-		ListView<String> listView = new ListView<>();
+		ListView<String> listView = new ListView<String>();
 		MultipleSelectionModel<String> selectionModel = listView.getSelectionModel();
 		ObservableList<String> list = FXCollections.observableArrayList();
 		for (String attribute : allAttributes) {
@@ -52,19 +65,23 @@ public class RoleplayCharacter extends VBox {
 	}
 	
 	
-	public int getCheckedCaracteristica(){
-		ListView<String> content = (ListView<String>) caracteristicasTitledPane.getContent();
-		ListView<String> view = content;
+	public int getChecked(ListView<String> view){
+		
 		MultipleSelectionModel<String> selectionModel = view.getSelectionModel();
 		ObservableList<String> selectedItems = selectionModel.getSelectedItems();
-		String s = selectedItems.toString();
-		//int value = sheet.GetCaracteristica(s);
-		return 0;
+		
+		if (selectedItems.size()>0) {
+			
+			String feature =  selectedItems.get(0).toString();									
+			return sheet.GetAttribute(feature);
+}
+		else {
+			return 0;
+		}
+		
 	}
 	
-	public String getCheckedHabilidad(){
-		return sheetPane.getText();
-	}
+
 
 	public TitledPane getSheetPane() {
 		return sheetPane;

@@ -26,6 +26,8 @@ public class DiceSet {
 		SetDiceValues(n1, n2, n3);
 		return lastRoll;
 	}
+
+	
 	
 	public int m (){
 		return lastRoll.get(DiceLetter.m);
@@ -40,7 +42,7 @@ public class DiceSet {
 	}
 	
     
-    private void Diceset() {
+    public DiceSet() {
     	SetDiceValues(0, 0, 0);
 	}
 

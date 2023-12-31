@@ -2,7 +2,7 @@ package data;
 
 import java.util.ArrayList;
 
-import app.Manager;
+import app.Master;
 import items.RoleplayCharacter;
 
 public class ChatacterData {
@@ -10,7 +10,7 @@ public class ChatacterData {
 	ArrayList<RoleplayCharacter> all = new ArrayList<RoleplayCharacter>();
 	
 
-	public  ChatacterData(Manager manager) {
+	public  ChatacterData(Master manager) {
 		
 	    RoleplayCharacter character1 = new RoleplayCharacter("Warrior", 0);
 	    character1.sheet.SetCaracteristicas(4, 4, 4, 4);

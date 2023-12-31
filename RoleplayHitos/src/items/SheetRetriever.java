@@ -78,9 +78,19 @@ public class SheetRetriever {
     	habilidades.put(h, value);
     }
     
-    public int GetCaracteristica(String s) {
-		return GetAttribute(Caracteristica.valueOf(s));
+    public int GetAttribute(String s) {
+        try {
+            Caracteristica caracteristica = Caracteristica.valueOf(s);
+            return GetAttribute(caracteristica);
+        	} catch (IllegalArgumentException e) {        }
+        try {
+            Habilidad habilidad = Habilidad.valueOf(s);
+            return GetAttribute(habilidad);
+        	} catch (IllegalArgumentException e) {
+        }
+        return 0;	
     }
+    
     
     public int GetAttribute(Caracteristica c) {
     	return caracteristicas.get(c);
