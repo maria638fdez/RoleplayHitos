@@ -24,11 +24,28 @@ public class DiceSet {
 		int n2 = rand.nextInt(10) + 1;
 		int n3 = rand.nextInt(10) + 1;
 		SetDiceValues(n1, n2, n3);
+		checkSpecialValues();
 		return lastRoll;
 	}
 
 	
 	
+	private void checkSpecialValues() {
+		
+		// Pifia
+		if(m() ==1 && C() == 1) {
+			if(M()==1) {System.out.println("¡Pifia triple!");}
+			else {System.out.println("¡Pifia doble!");}
+		}
+		
+		//Critico
+		if(M() == 10 && C() == 10) {
+			if(m()==10) {System.out.println("¡Crítico triple!");}
+			else {System.out.println("¡Crítico doble!");}
+		}
+		
+	}
+
 	public int m (){
 		return lastRoll.get(DiceLetter.m);
 	}

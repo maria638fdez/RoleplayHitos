@@ -1,6 +1,5 @@
 package app;
 
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedHashMap;
@@ -19,7 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.HBox;
 
-public class TurnTracker implements ActionListener {
+public class TurnTrackerRepresentation implements ActionListener {
 	
 	TitledPane tracker;
     private Map<String, Integer> turnOrder;
@@ -27,7 +26,7 @@ public class TurnTracker implements ActionListener {
     private JButton resetButton;
     private JButton startButton;
 	
-	public TurnTracker() {
+	public TurnTrackerRepresentation() {
 		
 		
 		resetTracker();

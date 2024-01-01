@@ -1,5 +1,6 @@
 # RoleplayHitos
 An app that manages a roleplay table for a Hitos campaign.
+Used: JavaFX, Maven, Spring.
 This is a java project in progress.
 
 ## Turn tracker

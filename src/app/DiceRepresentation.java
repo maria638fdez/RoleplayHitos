@@ -84,6 +84,26 @@ public class DiceRepresentation {
         double textHeight = romboid.getFont().getSize();
         romboid.fillText(numberString, (width - textWidth)/2, (height + textHeight)/2);
 	}
+	
+	public int roll_m() {
+		this.dice.roll();
+		int dice = this.dice.M();
+		return dice;
+	}
+	
+	
+	public int roll_M() {
+		this.dice.roll();
+		int dice = this.dice.M();
+		return dice;
+	}
+	
+
+	public int roll_C() {
+		this.dice.roll();
+		int dice = this.dice.C();
+		return dice;
+	}
 
 
 
