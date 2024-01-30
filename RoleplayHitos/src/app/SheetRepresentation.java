@@ -1,12 +1,13 @@
-package items;
+package app;
 
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import items.SheetRetriever.Caracteristica;
-import items.SheetRetriever.Habilidad;
+import interfaces.Caracteristica;
+import interfaces.Habilidad;
+import items.Sheet;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -18,10 +19,9 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.layout.VBox;
 
 
-public class RoleplayCharacter extends VBox {
+public class SheetRepresentation extends VBox {
 	
-    private String name;
-    public SheetRetriever sheet;
+    public Sheet sheet;
     public TitledPane sheetPane;
     protected TitledPane caracteristicasTitledPane;
     protected TitledPane habilidadesTitledPane;
@@ -34,15 +34,15 @@ public class RoleplayCharacter extends VBox {
     	return habilidadesTitledPane;
     }
     
-	public RoleplayCharacter(String name, int drama) {
+	public SheetRepresentation(String name, int drama) {
 		
 		// Sheet (empty)
-		sheet = new SheetRetriever(name, drama);
+		sheet = new Sheet(this, name, drama);
 		sheetPane = new TitledPane(name, new Label("Contenido"));
 		
 		// Panes
-		caracteristicasTitledPane = createSecondaryPane("Caracteristicas", sheet.getAllCaracteristicas());
-		habilidadesTitledPane = createSecondaryPane("Habilidades", sheet.getAllHabilidades());
+		caracteristicasTitledPane = createSecondaryPane("Caracteristicas", sheet.caracteristicas.getAllNames());//getAllNames());
+		habilidadesTitledPane = createSecondaryPane("Habilidades", sheet.habilidades.getAllNames());
 		
 		//Agrupación de paneles
 		VBox AttributesPane = new VBox(caracteristicasTitledPane, new Separator(), habilidadesTitledPane);
@@ -63,7 +63,6 @@ public class RoleplayCharacter extends VBox {
 		titledPane.setCollapsible(false);
 		return titledPane;
 	}
-	
 	
 	public int getChecked(ListView<String> view){
 		
