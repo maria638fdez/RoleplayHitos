@@ -1,0 +1,23 @@
+CONSOLA
+También mostrará los errores por pantalla
+Admite caracteres especiales (no lo hace bien)
+
+TURN TRACKER
+Al pulsar start, seleccionará una serie de personajes y todos tirarán iniciativa.
+Inicialmente, apareceran ordenados.
+Tendrá un botón "Next" para pasar de turno.
+
+ACCIONES CONJUNTAS
+Al ejecutar click derecho sobre una de las fichas, salen una serie de acciones. 
+Estas acciones permiten seleccionar una o más fichas diferentes a la ya seleccionada (lílite definido).
+Se ejecuta una tirada en la mesa dependiendo de la opción elegida.
+
+CURAR
+El master podrá curar a un personaje con click simple.
+Aparecerá un emergente que preguntara si lo quieres curar entero o una cifra determinada (introducida en un campo de texto).
+El personaje se curará dependiendo de lo elegido
+
+INTERFACES PARA LISTAS DE CARACTERISTICA Y HABILIDAD
+
+BASAR EN LA OTRA APP
+Mirar funcionalidades en otra app.
